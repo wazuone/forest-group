@@ -9,16 +9,17 @@ const navigation = document.querySelector('.nav')
 const navList = document.querySelectorAll('.nav-item')
 const body = document.querySelector('body')
 
-const headerSection = document.querySelectorAll('.header')
-const aboutusSection = document.querySelectorAll('.about-us')
-const offersSection = document.querySelectorAll('.offers')
-const contactSection = document.querySelectorAll('.contact')
+
 
 function activeMenu () {
 	let len = sections.length
 	while(--len && window.scrollY + 94 < sections[len].offsetTop){}
 	navList.forEach(ltx => ltx.classList.remove('action-scroll'))
 	navList[len].classList.add('action-scroll')
+	if (window.location.href === 'https://wazuone.github.io/forest-group/contact.html') {
+		navList.forEach(ltx => ltx.classList.remove('action-scroll'))
+		navList[navList.length - 1].classList.add('action-scroll')
+	}
 }
 activeMenu()
 
