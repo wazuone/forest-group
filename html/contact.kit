@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Group | Najpiękniejszy park w Twojej okolicy!</title>
+    <!-- @include 'styles.kit' -->
+</head>
+
+<body>
+
+    <div class="burger-nav">
+        <div class="burger-items">
+            <a href="index.html" class="burger-item">Home</a>
+            <a href="index.html#aboutus" class="burger-item">O nas</a>
+            <a href="index.html#offers" class="burger-item">Oferta</a>
+            <a href="#" class="burger-item">Kontakt</a>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <div class="wrapper">
+            <!-- @include 'nav.kit' -->
+        </div>
+    </nav>
+
+    <button class="burger-btn">
+        <div class="burger-box">
+            <div class="burger-bars"></div>
+        </div>
+    </button>
+
+    <main class="contact section" id="contact">
+        <div class="contact-bg"></div>
+        <div class="contact-form wrapper">
+            <h2>kontakt</h2>
+            <div class="contact-all">
+                <div class="form-text">
+                    <input type="text" placeholder=" Imię *">
+                    <input type="email" placeholder=" Adres e-mail *">
+                    <input type="tel" placeholder=" Numer telefonu *">
+                </div>
+                <div class="form-area">
+                    <textarea placeholder=" Treść wiadomości *"></textarea>
+                </div>
+            </div>
+
+            <button class="send-btn">Wyślij</button>
+            <div class="location">
+                <div class="location-boxes">
+                    <div class="location-info">
+                        <h4>bądźmy w kontakcie</h4>
+                        <div class="adress">
+                            <p class="adress-title"><i class="fas fa-home"></i> Adres:</p>
+                            <p class="adress-text">Kraków, ul. Jasnogórska 2, 31-358</p>
+                        </div>
+                        <div class="telephone">
+                            <p class="adress-title"><i class="fas fa-at"></i> E-mail:</p>
+                            <p class="adress-text">forest@group.pl</p>
+                        </div>
+                        <div class="mail">
+                            <p class="adress-title"><i class="fas fa-phone"></i> Telefon:</p>
+                            <p class="adress-text">+12 34 567 89</p>
+                        </div>
+                        <div class="media">
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                    </div>
+                    <div class="location-google">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5119.737190712853!2d19.89127451865398!3d50.088747066768796!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1665834796201!5m2!1spl!2spl"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- @include 'footer.kit' -->
+
+
+    <script src="./dist/js/main.min.js"></script>
+</body>
+
+</html>

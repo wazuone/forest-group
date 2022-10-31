@@ -1,0 +1,1027 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	margin-top: 94px;
+	// font-size: 1.6rem;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+// BURGER-NAV
+
+.burger-nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	transform: translateX(100%);
+	background-color: #fff;
+	z-index: 10;
+	transition: transform 0.5s cubic-bezier(0.69, 0.23, 0.58, 1);
+
+	.burger-items {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+
+		.burger-item {
+			position: relative;
+			display: block;
+			margin: 0.5em 0;
+			padding: 0.5em 2em;
+			text-decoration: none;
+			font-size: 3.6em;
+			font-weight: 300;
+			color: #333;
+		}
+
+		.burger-item::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 3px;
+			height: 100%;
+			transform: scaleY(0);
+			background-color: #333;
+			transition: transform 0.3s;
+			content: '';
+		}
+
+		.burger-item:hover::before {
+			transform: scaleY(1);
+		}
+	}
+}
+
+.active {
+	transform: translateX(0);
+}
+
+.burger-btn {
+	position: fixed;
+	top: 25px;
+	right: 10px;
+	padding: 1em;
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	z-index: 12;
+
+	.burger-box {
+		position: relative;
+		width: 40px;
+		height: 10px;
+
+		.burger-bars,
+		.burger-bars::after,
+		.burger-bars::before {
+			position: absolute;
+			right: 0;
+			height: 3px;
+			background-color: #333;
+			transition: width 0.3s, background-color 0.3s;
+			content: '';
+		}
+
+		.burger-bars {
+			width: 100%;
+		}
+		.burger-bars::after {
+			top: 10px;
+			width: 60%;
+		}
+		.burger-bars::before {
+			top: 20px;
+			width: 30%;
+			transition-delay: 0.1s;
+		}
+
+		.mobile-bar-colors,
+		.mobile-bar-colors::after,
+		.mobile-bar-colors::before {
+			background-color: #fff;
+		}
+	}
+}
+
+.burger-btn:hover {
+	.burger-bars::after,
+	.burger-bars::before {
+		width: 100%;
+	}
+}
+
+//NAV
+
+.nav {
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	background-color: #fff;
+	width: 100%;
+	z-index: 9;
+
+	.nav-main {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.nav-logo {
+		font-size: 3rem;
+		padding: 1em 0.5em;
+
+		a {
+			text-decoration: none;
+			color: #333;
+		}
+	}
+
+	.nav-items {
+		display: none;
+		a {
+			font-size: 1.8rem;
+			text-decoration: none;
+			padding: 2em 2em;
+			color: #333;
+			transition: color 0.3s, background-color 0.3s;
+		}
+
+		a:hover {
+			background-color: #333;
+			color: #fff;
+		}
+
+		.action-scroll {
+			background-color: #333;
+			color: #fff;
+		}
+	}
+}
+
+@keyframes navItemsAnimation {
+	from {
+		transform: translateX(200%);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+.nav-items-animation {
+	animation: navItemsAnimation 1s both;
+}
+
+// HEADER
+
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	padding: 2em;
+	height: 400px;
+	color: #fff;
+	background-image: url('../img/jungle-1807476_640.jpg');
+	background-size: cover;
+	background-position: center 60%;
+
+	.header-bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.65);
+	}
+
+	.header-text {
+		z-index: 1;
+
+		p {
+			font-size: 3.2rem;
+			font-weight: 500;
+		}
+
+		h1 {
+			font-size: 2.4rem;
+			letter-spacing: 1px;
+			font-weight: 300;
+		}
+	}
+}
+
+// MAIN
+
+//ABOUT-US
+
+.about-us {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2em;
+	width: 100%;
+	scroll-margin-top: 50px;
+
+	.title {
+		text-align: center;
+		padding: 60px 0;
+		font-size: 4em;
+		font-weight: 300;
+		text-transform: uppercase;
+	}
+
+	.aboutus-main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+
+		.aboutus-img {
+			width: 100%;
+			height: 350px;
+			background-image: url('../img/waters-3095682_640.jpg');
+			background-position: center;
+			background-size: cover;
+		}
+
+		.aboutus-text {
+			width: 100%;
+			text-align: center;
+			padding-top: 4em;
+
+			h3 {
+				font-size: 2.4em;
+				padding-bottom: 0.5em;
+			}
+
+			p {
+				font-size: 1.4em;
+				line-height: 2em;
+				color: rgb(107, 105, 105);
+			}
+		}
+	}
+}
+
+// MIDIMG
+
+.mid-img {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 350px;
+	margin-top: 6em;
+	background-image: url('../img/girl-5785590_640.jpg');
+	background-size: cover;
+	background-position: center;
+
+	.mid-bg {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+
+	.mid-text {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 3em;
+
+		.mid-h2 {
+			font-weight: 400;
+			color: #fff;
+			border: 1px solid #fff;
+			width: 80%;
+			text-align: center;
+			padding: 30px 30px;
+		}
+	}
+}
+
+// OFFERS
+
+.offers {
+	padding: 2em;
+	scroll-margin-top: 50px;
+
+	.offers-title {
+		text-align: center;
+
+		h2 {
+			text-align: center;
+			padding-top: 60px;
+			padding-bottom: 40px;
+			font-size: 4em;
+			font-weight: 300;
+			text-transform: uppercase;
+		}
+
+		p {
+			font-size: 2.4em;
+			font-weight: 200;
+			padding-bottom: 50px;
+		}
+	}
+
+	.offers-slides {
+		padding-bottom: 3em;
+		.box-slide {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+
+			.layout-box {
+				position: relative;
+				border: 1px solid black;
+				width: 29em;
+				padding: 3em 3em;
+				margin: 2em 2em;
+				text-align: center;
+				box-shadow: 0px 2px 4px 1px #b8b3b3;
+				border-radius: 8px;
+				border: none;
+				transition: transform 0.3s;
+
+				.top {
+					position: absolute;
+					background-color: rgba(40, 196, 100, 0.8);
+					padding: 8px 35px;
+					font-size: 14px;
+					font-weight: bold;
+					border-radius: 10px;
+					box-shadow: 0px 0px 7px 0px #000;
+					border: 1px solid #50b766;
+					text-transform: uppercase;
+					right: 7%;
+					top: -4%;
+				}
+
+				.box-title {
+					font-size: 3em;
+					padding-bottom: 7px;
+				}
+
+				.box-price {
+					font-size: 3.5em;
+					font-weight: bold;
+					padding-bottom: 10px;
+				}
+
+				.dolar {
+					font-size: 40px;
+				}
+
+				li {
+					list-style: none;
+				}
+			}
+
+			.layout-box:hover {
+				transform: scale(1.1);
+			}
+
+			.box-list {
+				font-size: 1.4em;
+				text-align: left;
+				padding-bottom: 15px;
+
+				.fas {
+					margin: 7px 10px;
+				}
+
+				.fa-check {
+					color: rgb(51, 255, 0);
+				}
+
+				.disabled {
+					color: grey;
+				}
+			}
+
+			.choose {
+				width: 100%;
+				padding: 10px 0;
+				margin: 10px 0;
+				border: none;
+				color: rgb(88, 86, 86);
+				font-size: 1.6em;
+				box-shadow: 0px 4px 6px 0px rgb(184, 179, 179);
+				border-radius: 8px;
+				transition: background-color 0.3s;
+				cursor: pointer;
+			}
+
+			.choose:hover {
+				background-color: rgba(0, 0, 0, 0.2);
+			}
+
+			.choose:hover {
+				background-color: rgba(40, 196, 100, 0.63);
+				color: #000;
+			}
+		}
+	}
+
+	.offers-contact {
+		text-align: center;
+		font-size: 1.4em;
+		padding-bottom: 2em;
+		color: rgb(92, 91, 91);
+
+		span {
+			color: #333;
+
+			a {
+				text-decoration: none;
+				font-weight: bold;
+				color: rgb(5, 109, 3);
+			}
+		}
+	}
+}
+
+// FOOTER
+
+.footer {
+	width: 100%;
+	background-color: rgb(236, 230, 230);
+	padding: 0 2em;
+
+	.footer-top {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding: 5em 0 5em;
+
+		.footer-logo {
+			font-size: 4.6rem;
+			color: #333;
+			padding-bottom: 40px;
+		}
+
+		.footer-map {
+			display: flex;
+			flex-wrap: wrap;
+			// justify-content: center
+			justify-content: center;
+
+			.map {
+				// display: flex;
+				// flex-direction: column;
+				margin: 10px 20px;
+				text-align: center;
+
+				h3 {
+					font-size: 2em;
+					padding-bottom: 15px;
+				}
+
+				ul {
+					li {
+						list-style: none;
+						margin-bottom: 10px;
+						a {
+							text-decoration: none;
+							color: rgb(112, 106, 106);
+							font-size: 1.2em;
+							cursor: pointer;
+							transition: color 0.3s;
+						}
+
+						a:hover {
+							color: #333;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 5em;
+	background-color: rgb(236, 230, 230);
+	border-top: 1px solid rgb(105, 103, 103);
+
+	p {
+		font-size: 1.4em;
+		color: rgb(112, 106, 106);
+	}
+}
+
+// CONTACT FORM //
+
+.contact {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/pathway-g140c0cf65_1920.jpg');
+	background-position: center;
+	background-size: cover;
+	scroll-margin-top: 50px;
+
+	.contact-bg {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+
+	.contact-form {
+		padding: 2em;
+		z-index: 3;
+
+		h2 {
+			text-align: center;
+			margin-top: 1.5em;
+			margin-bottom: 0.5em;
+			font-size: 4em;
+			font-weight: 300;
+			text-transform: uppercase;
+			color: #fff;
+		}
+
+		.contact-all {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			padding: 2em;
+			margin-bottom: 2em;
+
+			.form-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				width: 100%;
+				margin-bottom: 3em;
+
+				input {
+					margin-bottom: 3em;
+					padding: 2em;
+					background-color: rgba(255, 255, 255, 0.856);
+					width: 100%;
+					border-radius: 8px;
+					height: 50px;
+					font-family: 'Roboto', sans-serif;
+				}
+
+				input:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			.form-area {
+				width: 100%;
+				textarea {
+					padding: 2em;
+					height: 250px;
+					width: 100%;
+					background-color: rgba(255, 255, 255, 0.856);
+					border-radius: 8px;
+					max-width: 100%;
+					// min-width: 300px;
+					max-height: 250px;
+					// min-height: 200px;
+					font-family: 'Roboto', sans-serif;
+				}
+			}
+		}
+
+		.send-btn {
+			position: absolute;
+			left: 50%;
+			padding: 1em 2em;
+			color: #fff;
+			border-radius: 8px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			background-color: rgba(0, 0, 0, 0.76);
+			transform: translateX(-50%);
+			transition: border 0.3s;
+			cursor: pointer;
+		}
+
+		.send-btn:hover {
+			border: 1px solid #fff;
+		}
+
+		.location {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.location-boxes {
+				width: 100%;
+				height: 100%;
+				padding: 2em;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				margin-top: 13em;
+				margin-bottom: 4em;
+
+				.location-info {
+					height: 100%;
+					width: 100%;
+					padding: 3em;
+					background-color: rgba(255, 255, 255, 0.856);
+					border-radius: 8px;
+					margin-bottom: 5em;
+
+					h4 {
+						font-size: 2em;
+						text-transform: uppercase;
+						margin-bottom: 2em;
+						text-decoration: underline;
+						text-align: center;
+					}
+
+					.adress-title {
+						font-size: 1.6em;
+						font-weight: bold;
+						padding-bottom: 0.5em;
+					}
+
+					.adress-text {
+						font-size: 1.4em;
+						margin-left: 3em;
+						padding-bottom: 2em;
+					}
+
+					.fas {
+						padding-right: 5px;
+					}
+				}
+
+				.media {
+					font-size: 3em;
+					text-align: center;
+
+					.fab {
+						padding: 0.3em;
+						margin: 0 0.1em;
+						transition: transform 0.3s;
+						cursor: pointer;
+					}
+
+					.fab:hover {
+						transform: scale(1.2);
+					}
+				}
+
+				.location-google {
+					width: 100%;
+					iframe {
+						width: 100%;
+						border-radius: 8px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// OFFER SITE
+
+.offers-main {
+	position: relative;
+	padding-bottom: 3em;
+	background-image: url('../img/pathway-g140c0cf65_1920.jpg');
+	background-position: center;
+	background-size: cover;
+
+	.offers-bg {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+
+	.box-slide {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		.layout-box {
+			position: relative;
+			width: 100%;
+			padding: 2em 3em;
+			margin: 2em 2em;
+			text-align: center;
+			box-shadow: 0px 2px 4px 1px #b8b3b3;
+			background-color: rgba(255, 255, 255, 0.863);
+			border-radius: 8px;
+			border: none;
+			transition: transform 0.3s;
+
+			.top-offers {
+				position: absolute;
+				background-color: rgba(40, 196, 100, 0.9);
+				padding: 8px 35px;
+				font-size: 14px;
+				font-weight: bold;
+				border-radius: 10px;
+				box-shadow: 0px 0px 7px 0px #000;
+				border: 1px solid #50b766;
+				text-transform: uppercase;
+				right: 7%;
+				top: -3%;
+			}
+
+			.box-title {
+				font-size: 3em;
+				margin-bottom: 7px;
+				letter-spacing: 1px;
+			}
+
+			.box-price {
+				font-size: 3.5em;
+				font-weight: bold;
+				padding-bottom: 10px;
+			}
+
+			.dolar {
+				font-size: 40px;
+			}
+
+			li {
+				list-style: none;
+				font-weight: bold;
+				font-size: 1.2em;
+			}
+		}
+
+		.layout-box:hover {
+			transform: scale(1.05);
+			box-shadow: 0 0 5px 1px rgba(40, 196, 100, 0.9);
+		}
+
+		.box-list {
+			font-size: 1.4em;
+			text-align: left;
+			padding-bottom: 15px;
+
+			.fas {
+				margin: 7px 10px;
+			}
+
+			.fa-check {
+				color: rgb(51, 255, 0);
+			}
+
+			.disabled {
+				color: grey;
+			}
+
+			.option-text {
+				font-size: 0.8em;
+				color: rgb(133, 129, 129);
+				margin-bottom: 10px;
+			}
+		}
+
+		.choose {
+			width: 100%;
+			padding: 10px 0;
+			margin: 10px 0;
+			border: none;
+			color: rgb(88, 86, 86);
+			font-size: 1.6em;
+			box-shadow: 0px 4px 6px 0px rgb(184, 179, 179);
+			border-radius: 8px;
+			transition: background-color 0.3s;
+			cursor: pointer;
+		}
+
+		.choose:hover {
+			background-color: rgba(40, 196, 100, 0.63);
+		}
+
+		.fourth-box {
+			.box-title {
+				margin-bottom: 50px;
+			}
+
+			.box-list {
+				li {
+					margin-bottom: 10px;
+				}
+			}
+
+			.fourth-contact {
+				font-size: 1.4em;
+				font-weight: bold;
+
+				a {
+					text-decoration: none;
+					color: rgb(5, 109, 3);
+				}
+			}
+		}
+	}
+}
+
+// MEDIA
+
+@media (min-width: 382px) {
+	.offers {
+		.offers-slides {
+			.box-slide {
+				.layout-box {
+					.box-list {
+						margin: 0 30px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 767px) {
+	// HEADER
+
+	.header {
+		background-image: url('../img/jungle-1807476_1920.jpg');
+		.header-text {
+			p {
+				font-size: 4.2rem;
+			}
+
+			h1 {
+				font-size: 2.6rem;
+			}
+		}
+	}
+
+	// NAVIGATION
+
+	.nav {
+		.nav-logo {
+			font-size: 3.6rem;
+			padding: 0 0.5em;
+		}
+
+		.nav-items {
+			display: flex;
+		}
+	}
+
+	.burger-btn {
+		display: none;
+	}
+
+	// ABOUT-US
+	.main {
+		.about-us {
+			.aboutus-main {
+				flex-direction: row;
+				align-items: start;
+
+				.aboutus-text {
+					margin-left: 5em;
+					text-align: left;
+					padding-top: 0;
+					width: 50%;
+				}
+
+				.aboutus-img {
+					background-image: url('../img/waters-3095682_1920.jpg');
+					width: 50%;
+				}
+			}
+		}
+	}
+
+	// MID-IMG
+
+	.mid-img {
+		background-image: url('../img/girl-5785590_1920.jpg');
+
+		.mid-text {
+			font-size: 4em;
+		}
+	}
+
+	// FOOTER
+
+	.footer {
+		.footer-top {
+			flex-direction: row;
+			justify-content: space-around;
+
+			.footer-map {
+				.map {
+					text-align: left;
+				}
+			}
+		}
+	}
+
+	// CONTACT
+
+	.contact {
+		background-image: url('../img/pathway-g140c0cf65_1920.jpg');
+		.contact-form {
+			.contact-all {
+				.form-text {
+					width: 40%;
+					margin-right: 3em;
+				}
+				.form-area {
+					width: 50%;
+					margin-left: 3em;
+					textarea {
+						max-width: 100%;
+						min-width: 100%;
+						// max-height: 250px;
+						min-height: 200px;
+					}
+				}
+			}
+
+			.send-btn {
+				margin-top: -1em;
+			}
+
+			.location {
+				.location-boxes {
+					justify-content: space-around;
+					.location-info {
+						width: 40%;
+						height: 100%;
+						margin-bottom: 0;
+
+						.fab {
+							margin: 0 0.3em;
+						}
+					}
+
+					.location-google {
+						width: 40%;
+
+						iframe {
+							height: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// OFFERS SITE
+
+	.offers-main {
+		background-image: url('../img/pathway-g140c0cf65_1920.jpg');
+		.offers {
+			.box-slide {
+				.layout-box {
+					width: 40%;
+					min-width: 465px;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.header {
+		.header-text {
+			p {
+				font-size: 4.4rem;
+			}
+
+			h1 {
+				font-size: 2.8rem;
+			}
+		}
+	}
+}
