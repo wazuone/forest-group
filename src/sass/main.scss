@@ -355,7 +355,6 @@ body {
 
 			.layout-box {
 				position: relative;
-				border: 1px solid black;
 				width: 29em;
 				padding: 3em 3em;
 				margin: 2em 2em;
@@ -620,6 +619,7 @@ body {
 			left: 50%;
 			padding: 1em 2em;
 			color: #fff;
+			border: 1px solid transparent;
 			border-radius: 8px;
 			letter-spacing: 1px;
 			text-transform: uppercase;
